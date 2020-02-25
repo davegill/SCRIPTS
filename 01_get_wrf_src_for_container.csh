@@ -30,6 +30,12 @@ sed -e "s|_FORK_|${FORK}|" \
     Dockerfile > .foo
 mv .foo Dockerfile
 
+sed -e "s|_FORK_|${FORK}|" \
+    -e "s|_REPO_|${REPO}|" \
+    -e "s|_BRANCH_|${BRANCH}|" \
+    Dockerfile-NMM > .foo
+mv .foo Dockerfile-NMM
+
 ./build.csh $REQUEST_DIR $REQUEST_DIR/wrf-coop
 
 if ( ! -d OUTPUT ) then

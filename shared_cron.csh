@@ -210,9 +210,9 @@ else if ( $MASTER_TF == master=false ) then
 	else if ( $ACTIVITY == START_ME_UP            ) then
 		echo `date` starting up test for `hostname`
 		pushd ~
-			foreach f ( build.csh Dockerfile foo.list last_only_once.csh Namelists nml.tar \
-			            output.txt single.csh SUCCESS_FAIL \
-			            test_001m.csh test_001o.csh test_001s.csh test_002m.csh test_002s.csh \
+			foreach f ( build.csh Dockerfile Dockerfile-NMM foo.list last_only_once.csh \
+			            Namelists nml.tar output.txt single.csh SUCCESS_FAIL \
+			            test_001m.csh test_001o.csh test_001s.csh test_002m.csh \
 			            test_003m.csh test_003s.csh test_004m.csh test_004o.csh test_004s.csh \
 			            test_005m.csh test_005o.csh test_005s.csh test_006m.csh test_006o.csh \
 			            test_006s.csh test_007m.csh test_007o.csh test_007s.csh test_008m.csh \

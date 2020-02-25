@@ -9,6 +9,7 @@ set email = $1
 cd $HOME
 
 $CP /classroom/dave/wrf-coop/Dockerfile .
+$CP /classroom/dave/wrf-coop/Dockerfile-NMM .
 $CP /classroom/dave/wrf-coop/*.csh .
 
 date
@@ -69,6 +70,7 @@ if ( $TITLE == PASS ) then
 	$RM single.csh
 	$RM test_*.csh
 	$RM Dockerfile
+	$RM Dockerfile-NMM
 	$RM foo.list
 	$RM last_only_once.csh
 	$RM Namelists
