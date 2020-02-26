@@ -36,7 +36,13 @@ endif
 echo The script to run is $script_to_run > output.txt
 
 set LABEL = `grep "docker exec" $script_to_run | grep _RUN_ | cut -d"|" -f3 | awk '{print $2}' | rev | cut -d"_" -f2- | rev`
-( date ; ./single.csh ; ./$script_to_run ; date ) >> output.txt
+
+set test_num = `echo $script_to_run | cut -b 7-8`
+if ( $test_num == 02 ) then
+	( date ; ./single.csh Dockerfile     ; ./$script_to_run ; date ) >> output.txt
+else
+	( date ; ./single.csh Dockerfile-NMM ; ./$script_to_run ; date ) >> output.txt
+endif
 
 grep -q SUCCESS output.txt >> SUCCESS_FAIL
 set OK_S = $status
