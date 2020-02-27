@@ -39,9 +39,9 @@ set LABEL = `grep "docker exec" $script_to_run | grep _RUN_ | cut -d"|" -f3 | aw
 
 set test_num = `echo $script_to_run | cut -b 7-8`
 if ( $test_num == 02 ) then
-	( date ; ./single.csh Dockerfile     ; ./$script_to_run ; date ) >> output.txt
-else
 	( date ; ./single.csh Dockerfile-NMM ; ./$script_to_run ; date ) >> output.txt
+else
+	( date ; ./single.csh Dockerfile     ; ./$script_to_run ; date ) >> output.txt
 endif
 
 grep -q SUCCESS output.txt >> SUCCESS_FAIL
