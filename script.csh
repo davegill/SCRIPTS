@@ -266,7 +266,21 @@ else if ( $WHICH_FUNCTION == RUN   ) then
 	
 	#	Bring in all of the input data for the real program and the WRF model. This tends to
 	#	be data from WPS (geogrid or metgrid), or some files for gridded or obs nudging.
+	#	For the em_real data, we split the tests up in multiple pieces. Each piece needs the
+	#	met_em* data. There is no need to have a massive data directory, we just link on the fly.
 
+	if ( ! -d /wrf/Data/$COMP_RUN_DIR ) then
+		if ( ( $COMP_RUN_DIR == em_realA ) || \
+		     ( $COMP_RUN_DIR == em_realB ) || \
+		     ( $COMP_RUN_DIR == em_realC ) || \
+		     ( $COMP_RUN_DIR == em_realD ) || \
+		     ( $COMP_RUN_DIR == em_realE ) || \
+		     ( $COMP_RUN_DIR == em_realF ) ) then
+			pushd /wrf/Data >& /dev/null
+			ln -sf em_real $COMP_RUN_DIR
+			popd >& /dev/null
+		endif
+	endif
 	ln -sf /wrf/Data/$COMP_RUN_DIR/* .
 	
 	#	Following the conventions in the regtest, the namelist files are in a few different
@@ -283,7 +297,13 @@ else if ( $WHICH_FUNCTION == RUN   ) then
 	          ( ( ${COMP_BUILD_TARGET} == em_quarter_ss ) && ( $COMP_RUN_DIR == em_quarter_ss8 ) ) ) then
 		cp /wrf/Namelists/weekly/$COMP_RUN_DIR/namelist.input.${COMP_RUN_TEST} namelist.input
 	else if ( ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_real        ) ) || \
-	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_real8       ) ) ) then
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_real8       ) ) || \
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realA       ) ) || \
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realB       ) ) || \
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realC       ) ) || \
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realD       ) ) || \
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realE       ) ) || \
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realF       ) ) ) then
 		if      ( $CONF_BUILD_NUM == 32 ) then
 			cp /wrf/Namelists/weekly/$COMP_RUN_DIR/SERIAL/namelist.input.${COMP_RUN_TEST} namelist.input
 		else if ( $CONF_BUILD_NUM == 33 ) then
