@@ -44,7 +44,7 @@ else
 	( date ; ./single.csh Dockerfile     ; ./$script_to_run ; date ) >> output.txt
 endif
 
-grep -q SUCCESS output.txt >> SUCCESS_FAIL
+grep -aq SUCCESS output.txt >> SUCCESS_FAIL
 set OK_S = $status
 if  ( $OK_S == 0 ) then 
 	echo "SUCCESS " >> SUCCESS_FAIL
@@ -52,7 +52,7 @@ if  ( $OK_S == 0 ) then
 	echo " " >> SUCCESS_FAIL
 endif
 
-grep -q FAIL output.txt >> SUCCESS_FAIL
+grep -aq FAIL output.txt >> SUCCESS_FAIL
 set OK_F = $status
 if  ( $OK_F == 0 ) then 
 	echo "FAIL " >> SUCCESS_FAIL
