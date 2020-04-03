@@ -82,7 +82,6 @@
  icloud                              = 1,
  icloud_bl                           = 0,
  num_land_cat                        = 28
- swint_opt                           = 2,
  /
 
  &fdda
