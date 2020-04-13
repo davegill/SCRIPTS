@@ -1,4 +1,8 @@
 OPTIONS            
+namelist.input.3dtke
+namelist.input.conus
+namelist.input.rap
+namelist.input.tropical
 namelist.input.03
 namelist.input.03DF
 namelist.input.03FD
@@ -28,3 +32,9 @@ namelist.input.65DF
 namelist.input.66FD
 namelist.input.71
 namelist.input.78
+namelist.input.79
+namelist.input.cmt
+namelist.input.kiaps1NE
+namelist.input.kiaps2
+namelist.input.solaraNE
+namelist.input.urb3bNE
