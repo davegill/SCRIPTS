@@ -472,7 +472,7 @@ else if ( $WHICH_FUNCTION == RUN   ) then
 				if ( ( $OK_nan == 1 ) && ( $OK_time_levels == 0 ) ) then
 					set FILE = /wrf/wrfoutput/SUCCESS_RUN_WRF_d0${d}_${COMP_BUILD_TARGET}_${CONF_BUILD_NUM}_${COMP_RUN_DIR}_${COMP_RUN_TEST}
 					touch $FILE
-					python ~/rd_l2_norm.py wrfout_d0${d}_* >> $FILE
+					python3 ~/rd_l2_norm.py wrfout_d0${d}_* >> $FILE
 					exit ( 0 )
 				else 
 					touch /wrf/wrfoutput/FAIL_RUN_WRF_d0${d}_${COMP_BUILD_TARGET}_${CONF_BUILD_NUM}_${COMP_RUN_DIR}_${COMP_RUN_TEST}
