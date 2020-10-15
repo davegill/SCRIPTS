@@ -211,12 +211,26 @@ else if ( $MASTER_TF == master=false ) then
 		echo `date` starting up test for `hostname`
 		pushd ~
 			foreach f ( build.csh Dockerfile Dockerfile-NMM foo.list last_only_once.csh \
-			            Namelists nml.tar output.txt single.csh SUCCESS_FAIL \
-			            test_001m.csh test_001o.csh test_001s.csh test_002m.csh \
-			            test_003m.csh test_003s.csh test_004m.csh test_004o.csh test_004s.csh \
-			            test_005m.csh test_005o.csh test_005s.csh test_006m.csh test_006o.csh \
-			            test_006s.csh test_007m.csh test_007o.csh test_007s.csh test_008m.csh \
-			            test_009m.csh test_009o.csh test_009s.csh test_010s.csh )
+			            Namelists nml.tar output.txt single_init.csh single_end.csh SUCCESS_FAIL \
+			            test_001m.csh test_001o.csh test_001s.csh \
+			            test_002m.csh                             \
+			            test_003m.csh               test_003s.csh \
+			            test_004m.csh test_004o.csh test_004s.csh \
+			            test_005m.csh test_005o.csh test_005s.csh \
+			            test_006m.csh test_006o.csh test_006s.csh \
+			            test_007m.csh test_007o.csh test_007s.csh \
+			            test_008m.csh                             \
+			            test_009m.csh test_009o.csh test_009s.csh \
+			                                        test_010s.csh \
+			            test_011m.csh test_011o.csh test_011s.csh \
+			            test_012m.csh test_012o.csh test_012s.csh \
+			            test_013m.csh test_013o.csh test_013s.csh \
+			            test_014m.csh test_014o.csh test_014s.csh \
+			            test_015m.csh test_015o.csh test_015s.csh \
+			            test_016m.csh test_016o.csh test_016s.csh \
+			            test_017m.csh test_017o.csh test_017s.csh \
+			            test_018m.csh               test_018s.csh \
+			            test_019m.csh               test_019s.csh )
 				if ( -e $f ) then
 					rm -rf $f
 				endif
