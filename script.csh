@@ -277,7 +277,11 @@ else if ( $WHICH_FUNCTION == RUN   ) then
 		     ( $COMP_RUN_DIR == em_realE ) || \
 		     ( $COMP_RUN_DIR == em_realF ) || \
 		     ( $COMP_RUN_DIR == em_realG ) || \
-		     ( $COMP_RUN_DIR == em_realH ) ) then
+		     ( $COMP_RUN_DIR == em_realH ) || \
+		     ( $COMP_RUN_DIR == em_realI ) || \
+		     ( $COMP_RUN_DIR == em_realJ ) || \
+		     ( $COMP_RUN_DIR == em_realK ) || \
+		     ( $COMP_RUN_DIR == em_realL ) ) then
 			pushd /wrf/Data >& /dev/null
 			ln -sf em_real $COMP_RUN_DIR
 			popd >& /dev/null
@@ -307,7 +311,11 @@ else if ( $WHICH_FUNCTION == RUN   ) then
 	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realE       ) ) || \
 	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realF       ) ) || \
 	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realG       ) ) || \
-	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realH       ) ) ) then
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realH       ) ) || \
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realI       ) ) || \
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realJ       ) ) || \
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realK       ) ) || \
+	          ( ( ${COMP_BUILD_TARGET} == em_real       ) && ( $COMP_RUN_DIR == em_realL       ) ) ) then
 		if      ( $CONF_BUILD_NUM == 32 ) then
 			cp /wrf/Namelists/weekly/$COMP_RUN_DIR/SERIAL/namelist.input.${COMP_RUN_TEST} namelist.input
 		else if ( $CONF_BUILD_NUM == 33 ) then
