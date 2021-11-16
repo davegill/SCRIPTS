@@ -20,11 +20,11 @@ if      ( $INPUT == WRFPlus ) then
 	goto WRFPlus_STARTS_HERE
 
 else if ( $INPUT == WRF4DVar ) then
-	# about 8 min on Mac laptop
+	# about 8-9 min on Mac laptop
 	goto WRF4DVar_STARTS_HERE
 
 else if ( $INPUT == WRFDA  ) then
-	# about 7 min on Mac laptop
+	# about 8-9 min on Mac laptop
 	goto WRFDA_STARTS_HERE
 
 else if ( $INPUT == ALL ) then
