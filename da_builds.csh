@@ -123,7 +123,7 @@ if ( $HowMany == 43 ) then
 	ls -ls var/build/*.exe
 else
 	set OK = 1
-	echo FAIL BUILD WRFDA
+	echo "FAIL BUILD WRFDA, only have $HowMany / 43 executables"
 endif
 if ( $INPUT == WRFDA  ) then
 	exit $OK
