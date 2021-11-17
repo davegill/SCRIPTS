@@ -120,11 +120,12 @@ if ( $HowMany == 43 ) then
 	set OK = 0
 	echo SUCCESS BUILD WRFDA
 	touch /wrf/wrfoutput/SUCCESS_BUILD_WRF_d01_all_wrfvar_34_WRFDA
-	ls -ls var/build/*.exe
 else
 	set OK = 1
 	echo "FAIL BUILD WRFDA, only have $HowMany / 43 executables"
+	touch /wrf/wrfoutput/FAIL_BUILD_WRF_d01_all_wrfvar_34_WRFDA
 endif
+ls -ls var/build/*.exe
 if ( $INPUT == WRFDA  ) then
 	exit $OK
 endif
