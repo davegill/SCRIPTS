@@ -59,6 +59,7 @@ if ( $OK == 0 ) then
 	ls -ls main/wrfplus.exe
 else
 	echo FAIL BUILD WRFPlus
+	touch /wrf/wrfoutput/FAIL_BUILD_WRF_d01_wrfplus_18_WRFPlus
 endif
 if ( $INPUT == WRFPlus ) then
 	exit $OK
