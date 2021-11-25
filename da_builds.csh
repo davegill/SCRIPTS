@@ -88,11 +88,12 @@ if ( $HowMany == 43 ) then
 	set OK = 0
 	echo SUCCESS BUILD WRFDA-4DVar
 	touch /wrf/wrfoutput/SUCCESS_BUILD_WRF_d01_all_wrfvar_18_WRFDA-4DVar
-	ls -ls var/build/*.exe
 else
 	set OK = 1
-	echo FAIL BUILD WRFDA-4DVar
+	echo "FAIL BUILD WRFDA-4DVar, only have $HowMany / 43 executables"
+	touch /wrf/wrfoutput/FAIL_BUILD_WRF_d01_all_wrfvar_18_WRFDA-4DVar
 endif
+ls -ls var/build/*.exe
 if ( $INPUT == WRF4DVar ) then
 	exit $OK
 endif
