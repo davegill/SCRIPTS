@@ -1,20 +1,19 @@
 #!/bin/csh
 
-set dirs = ( em_b_wave em_chem em_chem_kpp em_fire em_hill2d_x em_move em_quarter_ss em_quarter_ss8 em_real em_real8 nmm_hwrf nmm_nest  )
+set DIR  = ( em_real em_realE em_realB em_realK em_realL em_realJ em_realC em_realD em_realA em_realF em_realH em_realI em_realG )
 
-foreach d ( $dirs )
+set PAR  = ( MPI SERIAL OPENMP )
+set PAR  = ( MPI )
 
-	pushd $d >& /dev/null
+set FILE = namelist.input.65DF
 
-                set num = `ls -1 | grep namelist.input. | grep NE | wc -l | awk '{print $1}'`
-                if ( $num > 0 ) then
-			echo FOUND SOME $d
-			grep -i history_interval namelist.input.*NE
-			echo
-		else
-			echo No NML $d
-			echo
-                endif
+foreach D ($DIR )
 
-	popd >& /dev/null
+	foreach P ( $PAR )
+	
+		sed -e '/use_aero_icbc/s/TRUE/FALSE/' $D/$P/$FILE >& .foo
+		mv .foo $D/$P/$FILE
+		
+	end
 end
+
