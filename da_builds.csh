@@ -61,6 +61,7 @@ else
 	echo FAIL BUILD WRFPlus
 	touch /wrf/wrfoutput/FAIL_BUILD_WRF_d01_wrfplus_18_WRFPlus
 endif
+echo $OK = STATUS
 if ( $INPUT == WRFPlus ) then
 	exit $OK
 endif
@@ -93,6 +94,7 @@ else
 	echo "FAIL BUILD WRFDA-4DVar, only have $HowMany / 43 executables"
 	touch /wrf/wrfoutput/FAIL_BUILD_WRF_d01_all_wrfvar_18_WRFDA-4DVar
 endif
+echo $OK = STATUS
 ls -ls var/build/*.exe
 if ( $INPUT == WRF4DVar ) then
 	exit $OK
@@ -127,6 +129,7 @@ else
 	echo "FAIL BUILD WRFDA, only have $HowMany / 43 executables"
 	touch /wrf/wrfoutput/FAIL_BUILD_WRF_d01_all_wrfvar_34_WRFDA
 endif
+echo $OK = STATUS
 ls -ls var/build/*.exe
 if ( $INPUT == WRFDA  ) then
 	exit $OK
