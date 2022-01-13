@@ -82,7 +82,7 @@ setenv WRFPLUS_DIR ~/WRFPLUS    # built-wrfplus-directory: must be built prior t
 ./configure 4dvar << EOF >& configure.out
 18
 EOF
-./compile -j 8 all_wrfvar >& foo
+./compile -j 4 all_wrfvar >& foo
 date
 set HowMany = `ls -1 var/build/*.exe | wc -l`
 if ( $HowMany == 43 ) then
@@ -117,7 +117,7 @@ unset WRFPLUS_DIR
 ./configure wrfda << EOF >& configure.out
 34
 EOF
-./compile -j 8 all_wrfvar >& foo
+./compile -j 4 all_wrfvar >& foo
 date
 set HowMany = `ls -1 var/build/*.exe | wc -l`
 if ( $HowMany == 43 ) then
