@@ -55,6 +55,7 @@
  smooth_option                       = 0
  use_adaptive_time_step              = .FALSE.
  step_to_output_time                 = .FALSE.
+ wif_input_opt                       = 1
  /
 
  &physics
